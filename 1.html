@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="styl1.css">
+		<meta charset="utf-8">
+		<title>cennik toreb z nadrukiem</title>
+		<a href='https://pl.freepik.com/psd/makieta'>Makieta pliki psd utworzone przez freepik - pl.freepik.com</a>
+		<a href='https://pl.freepik.com/psd/sprzedaz'>Sprzedaż pliki psd utworzone przez graphiccrew - pl.freepik.com</a>
+	</head>
+	
+	<body>
+	<div id="calosc">
+		<div id="naglowek">
+			<table width="100%">
+				<tr>
+					<td>Rodzaj</td>
+					<td>Kolor</td>
+					<td>Wymiary</td>
+					<td>Rodzaj nadr</td>
+					<td>Przycisk</td>
+				</tr>
+				<tr>
+					<td>
+						<select id="rodzaj">
+							<option value="plaski">Płaski uchwyt</option>
+							<option value="skrecony">Skręcony uchwyt</option>
+							<option value="sznurkowy">Sznurkowy uchwyt</option>
+						</select>
+					</td>
+					<td>
+							Biały:<input type="radio" value="bialy" name="kolor"
+							 checked><br>
+							Szary:<input type="radio" value="szary" name="kolor">
+					</td>
+					<td>
+						<select id="rozmiar">
+							<option value="180x80x225">180x80x225</option>
+							<option value="220x110x280">220x110x280</option>
+							<option value="260x140x300">260x140x300</option>
+							<option value="320x140x420">320x140x420</option>
+							<option value="320x200x245">320x200x245</option>
+							<option value="320x220x245">320x220x245</option>
+						</select>
+					</td>
+					<td>
+						<select id="nadruk">
+							<option value="1+0">1+0</option>
+							<option value="2+0">2+0</option>
+							<option value="3+0">3+0</option>
+							<option value="4+0">4+0</option>
+							<option value="1+1">1+1</option>
+							<option value="2+1">2+1</option>
+						</select>
+					</td>
+					<td>
+						<input type="submit" onClick="skrypcik()" />
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="zdjecie">
+			<img id="obrazek" src="torba1.jpg" alt="podgląd" width="500px" height="500px">
+		</div>
+		<div id="tabelka" >
+				<table id="tabela">
+					<tr>
+						<td id="t1"></td>
+						<td id="t2"></td>
+					</tr>
+					<tr>
+						<td id="t3"></td>
+						<td id="t4"></td>
+					</tr>
+					<tr>
+						<td id="t5"></td>
+						<td id="t6"></td>
+					</tr>
+					<tr>
+						<td id="t7"></td>
+						<td id="t8"></td>
+					</tr>
+					<tr>
+						<td id="t9"></td>
+						<td id="t10"></td>
+					</tr>
+					<tr>
+						<td id="t11"></td>
+						<td id="t12"></td>
+					</tr>
+				</table>
+		</div>
+	</div>
+		<script>
+			
+			window.onload = function(){
+				x=document.getElementById("tabela");
+				 x.style.display = "none"
+			}
+			
+			function getRandomInt(min, max) {
+  			min = Math.ceil(min);
+ 			max = Math.floor(max);
+  			return Math.floor(Math.random() * (max - min)) + min;
+	}
+
+
+
+			function skrypcik()
+			{
+			let img = ['torba1.jpg','torba2.jpg','torba3.jpg'];
+			let rodzaj=document.getElementById('rodzaj').value;
+			let rozmiar=document.getElementById('rozmiar').value;
+			let nadruk=document.getElementById('nadruk').value;
+			let kolor;
+				var f= document.getElementsByName('kolor');
+				for(var i = 0; i < f.length; i++){
+    			if(f[i].checked){
+					kolor = f[i].value;
+				}
+			}
+			let tabela=[rodzaj,kolor,rozmiar,nadruk];
+			//let kolor=document.getElementsByName('kolor');
+			let tekst="";
+					console.log(rodzaj);
+					console.log(kolor);
+					console.log(rozmiar);
+					console.log(nadruk);
+				switch(tabela[0])
+				{
+				case "plaski":
+				document.getElementById('obrazek').src = img[0];
+					switch(tabela[1]){
+						case "bialy":
+							switch(tabela[2]){
+								case "180x80x225":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "220x110x280":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "260x140x300":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x140x420":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x200x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x220x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+									
+							}
+						case "szary":
+						switch(tabela[2]){
+								case "180x80x225":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "220x110x280":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "260x140x300":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x140x420":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x200x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x220x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+									
+							}
+							break;
+					}
+					break;
+				case "skrecony":
+					document.getElementById('obrazek').src = img[1];
+					switch(tabela[1]){
+						case "bialy":
+							switch(tabela[2]){
+								case "180x80x225":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "220x110x280":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "260x140x300":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x140x420":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x200x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x220x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+									
+							}
+						case "szary":
+						switch(tabela[2]){
+								case "180x80x225":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "220x110x280":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "260x140x300":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x140x420":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x200x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x220x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+									
+							}
+							break;
+					}
+					break;
+				
+				case "sznurkowy":
+					document.getElementById('obrazek').src = img[2];
+					switch(tabela[1]){
+						case "bialy":
+							switch(tabela[2]){
+								case "180x80x225":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "220x110x280":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "260x140x300":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x140x420":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x200x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x220x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+									
+							}
+						case "szary":
+						switch(tabela[2]){
+								case "180x80x225":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "220x110x280":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "260x140x300":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x140x420":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x200x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+								case "320x220x245":
+									switch(tabela[3]){
+										case "1+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "3+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "4+0":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "1+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+										case "2+1":
+											ilosc();
+											document.getElementById("t2").innerHTML="cena"+" "+tabela[0]+" "+tabela[1]+" "+tabela[2]+" "+tabela[3];
+											break;
+									}
+									
+							}
+							break;
+					}
+					break;
+				
+				}
+			}
+			function ilosc()
+			{
+				a=getRandomInt(1,500);
+				b=getRandomInt(1,500);
+				c=getRandomInt(1,500);
+				d=getRandomInt(1,500);
+				e=getRandomInt(1,500);
+				x.style.display = "block"
+				document.getElementById("t1").innerHTML="Ilosc";
+				document.getElementById("t3").innerHTML=100;
+				document.getElementById("t4").innerHTML=a;
+				document.getElementById("t5").innerHTML=200;
+				document.getElementById("t6").innerHTML=b;
+				document.getElementById("t7").innerHTML=300;
+				document.getElementById("t8").innerHTML=c;
+				document.getElementById("t9").innerHTML=400;
+				document.getElementById("t10").innerHTML=d;
+				document.getElementById("t11").innerHTML=500;
+				document.getElementById("t12").innerHTML=e;
+			}
+		</script>
+	</body>
+</html>

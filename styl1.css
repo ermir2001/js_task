@@ -1,0 +1,22 @@
+#calosc{
+	height:100%;
+	width: 100%;
+	clear:both;
+}
+#naglowek{
+	height: 200px;
+	width: 100%;
+	clear:both;
+}
+#zdjecie{	
+	float: left;
+}
+
+#tebelka td{
+	float: left;
+	padding:100px;
+}
+td{
+	border:solid 1px black;
+	padding:10px;
+}
